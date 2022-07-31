@@ -140,3 +140,8 @@ a {
   border-bottom: var(--ui-shadow-border);
   box-shadow: var(--ui-shadow);
 }
+
+.WelcomeView {
+  background: url("food.jpeg") left bottom;
+  background-size: cover;
+}
