@@ -25,8 +25,9 @@ app.get("/user", (req, res) => {
 app.get("/colors", async (req, res) => {
   // res.render("colors", colorController.DisplayData)
   // console.log("Hi")
-  const schemeID = Math.floor(Math.random() * 17941)
-  const url = "https://www.thecolorapi.com/scheme?hex=0047AB&rgb=0,71,171&hsl=215,100%,34%&cmyk=100,58,0,33&format=json&mode=analogic&count=6"
+  const randomColor = Math.floor(Math.random()*16777215).toString(16);
+
+  const url = `https://www.thecolorapi.com/scheme?hex=${randomColor}&format=json&mode=analogic&count=6`
 
   
 
@@ -46,17 +47,17 @@ app.get("/colors", async (req, res) => {
   const fetchColors = () => {
     axios.get(url)
         .then(response => {
-          console.log("hi")
-          console.log("color1", response.data.colors[0].name.closest_named_hex)
-          console.log("color2", response.data.colors[1].name.closest_named_hex)
-          console.log("color3", response.data.colors[2].name.closest_named_hex)
-          console.log("color4", response.data.colors[3].name.closest_named_hex)
-          console.log("color5", response.data.colors[4].name.closest_named_hex)
-          console.log("color6", response.data.colors[5].name.closest_named_hex)
+
+          const color1 = response.data.colors[0].name.closest_named_hex
+          const color2 = response.data.colors[1].name.closest_named_hex
+          const color3 = response.data.colors[2].name.closest_named_hex
+          const color4 = response.data.colors[3].name.closest_named_hex
+          const color5 = response.data.colors[4].name.closest_named_hex
+          const color6 = response.data.colors[5].name.closest_named_hex
             // const colors = response.schemes
             // console.log("response.data", response.data)
             // console.log(`GET list users`, colors);
-            res.render("colors", {colors: "blue"})
+            res.render("colors", {colors: {1: color1, 2: color2, 3: color3, 4: color4, 5: color5, 6: color6}})
         })
         .catch(error => console.error(error));
   };
