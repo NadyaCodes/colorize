@@ -61,7 +61,7 @@ a {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: flex-start;
 
   height: 100%;
@@ -141,7 +141,7 @@ a {
   box-shadow: var(--ui-shadow);
 }
 
-.WelcomeView {
+.WelcomeView, .ColorView {
   background: url("colorBurst.jpeg") left bottom;
   background-size: cover;
 }
