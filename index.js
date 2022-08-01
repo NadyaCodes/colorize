@@ -47,17 +47,20 @@ app.get("/colors", async (req, res) => {
   const fetchColors = () => {
     axios.get(url)
         .then(response => {
+          const colorObject = {}
+          let index = 0
 
-          const color1 = response.data.colors[0].name.closest_named_hex
-          const color2 = response.data.colors[1].name.closest_named_hex
-          const color3 = response.data.colors[2].name.closest_named_hex
-          const color4 = response.data.colors[3].name.closest_named_hex
-          const color5 = response.data.colors[4].name.closest_named_hex
-          const color6 = response.data.colors[5].name.closest_named_hex
-            // const colors = response.schemes
-            // console.log("response.data", response.data)
-            // console.log(`GET list users`, colors);
-            res.render("colors", {colors: {1: color1, 2: color2, 3: color3, 4: color4, 5: color5, 6: color6}})
+          for (let i = 0; i < response.data.colors.length; i++) {
+            let colorArray = Object.values(colorObject)
+
+            if (!colorArray.includes(response.data.colors[i].name.closest_named_hex)) {
+              colorObject[index] = response.data.colors[i].name.closest_named_hex
+              index++
+            }
+          }
+
+          console.log(colorObject, "colorObject")
+            res.render("colors", {colors: colorObject})
         })
         .catch(error => console.error(error));
   };
