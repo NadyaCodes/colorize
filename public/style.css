@@ -145,3 +145,11 @@ a {
   background: url("colorBurst.jpeg") left bottom;
   background-size: cover;
 }
+
+.colorBlock {
+  width: 10rem;
+  height: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
