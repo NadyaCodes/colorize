@@ -7,12 +7,15 @@ extends layout
 block layout-content 
   h1='Whatever'
   p(id='colors') Returned string: 
-  p.colorBlock(style=`background-color: ${colors["0"]}`) #{colors['0']}
-  p.colorBlock(style=`background-color: ${colors['1']}`) #{colors['1']} 
-  p.colorBlock(style=`background-color: ${colors['2']}`) #{colors['2']} 
-  p.colorBlock(style=`background-color: ${colors['3']}`) #{colors['3']} 
-  p.colorBlock(style=`background-color: ${colors['4']}`) #{colors['4']} 
-  p.colorBlock(style=`background-color: ${colors['5']}`) #{colors['5']} 
+  ul
+    each val, key in colors
+      li.colorBlock(style=`background-color: ${colors[key]}`)= val
+    //- p.colorBlock(style=`background-color: ${colors["0"]}`) #{colors['0']}
+    //- p.colorBlock(style=`background-color: ${colors['1']}`) #{colors['1']} 
+    //- p.colorBlock(style=`background-color: ${colors['2']}`) #{colors['2']} 
+    //- p.colorBlock(style=`background-color: ${colors['3']}`) #{colors['3']} 
+    //- p.colorBlock(style=`background-color: ${colors['4']}`) #{colors['4']} 
+    //- p.colorBlock(style=`background-color: ${colors['5']}`) #{colors['5']} 
 
       div.NavButtons
       a(href="/")
