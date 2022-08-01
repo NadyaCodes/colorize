@@ -1,12 +1,9 @@
 extends layout 
 
-//- block layout-content
-//-   div.View.ColorView
-//-     h1.Banner Find Your Scheme
-
 block layout-content 
-  h1='Whatever'
-  p(id='colors') Returned string: 
+  div.View.WelcomeView
+  h1.Banner='Color Palate'
+  p(id='colors') Selected Color Scheme
   ul
     each val, key in colors
       li.colorBlock(style=`background-color: ${colors[key]}`)= val
