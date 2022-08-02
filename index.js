@@ -24,11 +24,12 @@ app.get("/colors", async (req, res) => {
 
   const url = `https://www.thecolorapi.com/scheme?hex=${randomColor}&format=json&mode=analogic&count=6`
   
+  const colorObject = {}
+  const favObject = {'0': '#FF5733'}
   const fetchColors = () => {
     axios.get(url)
         .then(response => {
-          const colorObject = {}
-          const favObject = {'0': '#FF5733'}
+
           let index = 0
 
           for (let i = 0; i < response.data.colors.length; i++) {
@@ -48,12 +49,31 @@ app.get("/colors", async (req, res) => {
   fetchColors();
 })
 
-app.post("/colors", function (req, res) {
-  console.log(res.data)
-  res.render('colors', {
-    colors: colorObject, favs: favObject
-  }).catch(error => console.error(error));
-})
+
+// const button = document.getElementById('colorBtn');
+// button.addEventListener('click', console.log("clicked"))
+// button.addEventListener('click', async _ => {
+//   try {     
+//     const response = await fetch('/colors', {
+//       method: 'post',
+//       body: {
+//         color: "blue"
+//       }
+//     });
+//     console.log('Completed!', response);
+//   } catch(err) {
+//     console.error(`Error: ${err}`);
+//   }
+// });
+
+// app.post("/colors", function (req, res) {
+//   console.log("HI")
+//   // console.log("req", req)
+//   console.log("res", res)
+//   // res.render('colors', {
+//   //   colors: colorObject, favs: favObject
+//   // }).catch(error => console.error(error));
+// })
 
 app.listen(port, () => {
   console.log(`listening on port ${port}`)
