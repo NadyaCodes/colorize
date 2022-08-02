@@ -9,7 +9,11 @@ block layout-content
       div.NavButton Try Again
   ul
     each val, key in colors
-      li.colorBlock(style=`background-color: ${colors[key]}`)= val
+      button.colorBlock(style=`background-color: ${colors[key]}`)= val
+  h2 Faves 
+  ul 
+    each val, key in favs
+      li.colorBlock(style=`background-color: ${favs[key]}`)= val
 
   div.NavButtons
     a(href="/")

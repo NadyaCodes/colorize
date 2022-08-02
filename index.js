@@ -18,36 +18,17 @@ app.get("/user", (req, res) => {
   res.render("user", {title: "Profile", userProfile: {nickname: "Auth0"}})
 })
 
-// app.get("/colors", (req, res) => {
-//   res.render("colors", {title: "Colors"})
-// })
-// const colorController = require('./colors_controller')
+
 app.get("/colors", async (req, res) => {
-  // res.render("colors", colorController.DisplayData)
-  // console.log("Hi")
   const randomColor = Math.floor(Math.random()*16777215).toString(16);
 
   const url = `https://www.thecolorapi.com/scheme?hex=${randomColor}&format=json&mode=analogic&count=6`
-
-  
-
-  // const fetchScheme = async () => {
-  //   axios.get(url).then((data) => {
-  //     console.log(data.data)
-  //   })
-  // }
-  // fetchScheme()
-
-  // axios.get(url).then((req, res) => console.log(res.data)).catch(err => console.log(err));
-  // console.log(JSON.stringify(scheme))
-
-  // res.render("colors", {colors: scheme.data.schemes[0].colors})
-
   
   const fetchColors = () => {
     axios.get(url)
         .then(response => {
           const colorObject = {}
+          const favObject = {'0': '#FF5733'}
           let index = 0
 
           for (let i = 0; i < response.data.colors.length; i++) {
@@ -58,16 +39,20 @@ app.get("/colors", async (req, res) => {
               index++
             }
           }
-
           console.log(colorObject, "colorObject")
-            res.render("colors", {colors: colorObject})
+            res.render("colors", {colors: colorObject, favs: favObject})
         })
         .catch(error => console.error(error));
   };
 
   fetchColors();
+})
 
-  // res.render("colors", {colors: "blue"})
+app.post("/colors", function (req, res) {
+  console.log(res.data)
+  res.render('colors', {
+    colors: colorObject, favs: favObject
+  }).catch(error => console.error(error));
 })
 
 app.listen(port, () => {
