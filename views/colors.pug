@@ -11,16 +11,11 @@ block layout-content
     each val, key in colors
       button.colorBlock(id='colorButton' type="button" value=`${val}` style=`background-color: ${colors[key]}`)=val
   script.
-          //- col = colors[key]
     $(document).ready(function(){
       $(`:button`).click(function(){
-            //- console.log("val", val)
         console.log("this", this.value)
-            //- console.log("favs", favs)
         });
         });
-      //- script
-      //-   $('button').click(function(){console.log("clicked")})
   h2 Faves 
   ul 
     each val, key in favs
