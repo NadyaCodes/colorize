@@ -71,5 +71,16 @@ $(document).ready(function() {
     }
     renderColors(colorArray)
   })
+
+  $("#favColors").on( {mouseenter: function() {
+    $(this).text("")
+    $( this ).append( ( "<span><i class='fa-solid fa-trash'></i></span>" ) );
+
+  },
+  mouseleave: function(){
+    $( this ).find( "span" ).last().remove();
+    $(this).text(this.value)
+  }}, ".favColor");
+
   
 })

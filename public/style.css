@@ -179,3 +179,7 @@ a {
 ul {
   display: flex;
 }
+
+.fa-trash {
+  font-size: 3rem;
+}
