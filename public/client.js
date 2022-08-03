@@ -64,21 +64,13 @@ $(document).ready(function() {
     colorArray.push(this.value)
     renderColors(colorArray)
   })
-  // document.querySelector("#favColors > li")
 
-  // #favColors > li:nth-child(2)
-  
-  $(".favColor").click(function() {
-    alert("Hi!")
-    console.log(this.value)
+  $("#favColors").on("click", ".favColor", function() {
     const index = colorArray.indexOf(this.value)
-    // // colorArray.push(this.value)
     if (index !== -1) {
       colorArray.splice(index, 1);
     }
-    console.log(colorArray)
     renderColors(colorArray)
-    // $(".favColor").filter(`:contains(${this.value})`).remove();
   })
   
 })
