@@ -130,17 +130,18 @@ a {
   height: 55px;
   width: 150px;
 
-  background: #fa4141;
+  background-image: url("colorBurst.jpeg");
 
   border-radius: 30px;
 
   font-size: 16px;
   font-weight: bold;
-  color: white;
+  color: black;
+  border: .01rem solid black;
 
   text-transform: capitalize;
 
-  border-bottom: var(--ui-shadow-border);
+  /* border-bottom: var(--ui-shadow-border); */
   box-shadow: var(--ui-shadow);
 }
 
