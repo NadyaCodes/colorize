@@ -137,12 +137,18 @@ a {
   font-size: 16px;
   font-weight: bold;
   color: black;
-  border: .01rem solid black;
+  /* border: .5px solid grey; */
 
   text-transform: capitalize;
 
   /* border-bottom: var(--ui-shadow-border); */
-  box-shadow: var(--ui-shadow);
+  box-shadow: 3px 5px 20px 5px rgba(0, 0, 0, 0.06),
+  3px 5px 20px 5px rgba(0, 0, 0, 0.06), 3px 5px 20px 5px rgba(0, 0, 0, 0.08);
+  fill: rgba(0, 0, 0, 0.54);
+}
+
+.NavButton:hover {
+  transform: translate(2px, -2px);
 }
 
 .WelcomeView, .ColorView {
