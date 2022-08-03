@@ -1,26 +1,27 @@
 extends layout 
 
 block layout-content 
-  div.View.WelcomeView
+  div.View.ColorView
   h1.Banner='Color Palate'
-  p(id='colors') Selected Color Scheme
-    div.NavButtons
-    a(href="/colors")
-      div.NavButton Try Again
-  ul
-    each val, key in colors
-      button.colorBlock(id='colorButton' type="button" value=`${val}` style=`background-color: ${colors[key]}`)=val
-  script.
-    $(document).ready(function(){
-      $(`:button`).click(function(){
-        console.log("this", this.value)
-        });
-        });
-  h2 Faves 
-  ul 
-    each val, key in favs
-      li.colorBlock(style=`background-color: ${favs[key]}`)= val
+  div.colorPage
+    p(id='colors') Selected Color Scheme
+      div.NavButtons
+      a(href="/colors")
+        div.NavButton Try Again
+    ul
+      each val, key in colors
+        button.colorBlock(id='colorButton' type="button" value=`${val}` style=`background-color: ${colors[key]}`)=val
+    script.
+      $(document).ready(function(){
+        $(`:button`).click(function(){
+          console.log("this", this.value)
+          });
+          });
+    h2 Faves 
+    ul 
+      each val, key in favs
+        li.colorBlock(style=`background-color: ${favs[key]}`)= val
 
-  div.NavButtons
-    a(href="/")
-      div.NavButton Back to Home
+    div.NavButtons
+      a(href="/")
+        div.NavButton Back to Home
