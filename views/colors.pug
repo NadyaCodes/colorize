@@ -4,13 +4,15 @@ block layout-content
   div.View.ColorView
   h1.Banner='Color Palate'
   div.colorPage
-    p(id='colors') Selected Color Scheme
-      div.NavButtons
-      a(href="/colors")
-        div.NavButton Try Again
-    ul
+    //- p(id='colors') Selected Color Scheme
+
+    div.NavButtons
+      //- a(href="/colors")
+      div.NavButton.tryAgain Try Again
+    h2 Options
+    ul(id='colorOptions')
       each val, key in colors
-        button.colorBlock(id='colorButton' type="submit" value=`${val}` style=`background-color: ${colors[key]}`)=val
+        button.colorBlock.colorOption(type="submit" value=`${val}` style=`background-color: ${colors[key]}`)=val
     //- script.
     //-   $(document).ready(function(){
     //-     $(`:button`).click(function(){
@@ -19,6 +21,8 @@ block layout-content
     //-       });
     h2 Faves 
     ul(id='favColors')
+      button.colorBlock.favColor(type="submit" value=0 style=`background-color: ${000000}`)="No Faves Yet!"
+
     //- script.
     //-   favs = {'0': '#FF5733'}
     //-   for each val, key in favs
