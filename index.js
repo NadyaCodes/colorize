@@ -25,7 +25,7 @@ app.get("/colors", async (req, res) => {
   const url = `https://www.thecolorapi.com/scheme?hex=${randomColor}&format=json&mode=analogic&count=6`
   
   const colorObject = {}
-  const favObject = {'0': '#FF5733'}
+  // const favObject = {'0': '#FF5733'}
   const fetchColors = () => {
     axios.get(url)
         .then(response => {
@@ -41,7 +41,7 @@ app.get("/colors", async (req, res) => {
             }
           }
           console.log(colorObject, "colorObject")
-            res.render("colors", {colors: colorObject, favs: favObject})
+            res.render("colors", {colors: colorObject})
         })
         .catch(error => console.error(error));
   };

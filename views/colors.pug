@@ -10,17 +10,19 @@ block layout-content
         div.NavButton Try Again
     ul
       each val, key in colors
-        button.colorBlock(id='colorButton' type="button" value=`${val}` style=`background-color: ${colors[key]}`)=val
-    script.
-      $(document).ready(function(){
-        $(`:button`).click(function(){
-          console.log("this", this.value)
-          });
-          });
+        button.colorBlock(id='colorButton' type="submit" value=`${val}` style=`background-color: ${colors[key]}`)=val
+    //- script.
+    //-   $(document).ready(function(){
+    //-     $(`:button`).click(function(){
+    //-       console.log("this", this.value)
+    //-       });
+    //-       });
     h2 Faves 
-    ul 
-      each val, key in favs
-        li.colorBlock(style=`background-color: ${favs[key]}`)= val
+    ul(id='favColors')
+    //- script.
+    //-   favs = {'0': '#FF5733'}
+    //-   for each val, key in favs
+    //-     li.colorBlock(style=`background-color: ${favs[key]}`)= val
 
     div.NavButtons
       a(href="/")
