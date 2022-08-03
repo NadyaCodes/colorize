@@ -44,10 +44,10 @@ $(document).ready(function() {
 
             if (!newColorArray.includes(response.data.colors[i].name.closest_named_hex)) {
               newColorObject[index] = response.data.colors[i].name.closest_named_hex
+              newOption = createColorOptions(newColorObject[index])
+              $('#colorOptions').prepend(newOption)
               index++
             }
-            newOption = createColorOptions(response.data.colors[i].name.closest_named_hex)
-            $('#colorOptions').prepend(newOption)
           }
         })
         .catch(error => console.error(error));
