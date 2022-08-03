@@ -21,7 +21,11 @@ block layout-content
     //-       });
     h2 Faves 
     ul(id='favColors')
-      button.colorBlock.favColor(type="submit" value=0 style=`background-color: ${000000}`)="No Faves Yet!"
+      if favs.length > 0
+        each fav in favs
+          button.colorBlock.favColor(type="submit" value=`${fav}` style=`background-color: ${fav}`)=fav
+      else
+        button.colorBlock.favColor(type="submit" value=0 style=`background-color: ${000000}`)="No Faves Yet!"
 
     //- script.
     //-   favs = {'0': '#FF5733'}

@@ -1,5 +1,3 @@
-// import axios from 'axios';
-
 $(document).ready(function() {
 
 
@@ -12,7 +10,13 @@ $(document).ready(function() {
     return markup
   }
 
-  // button.colorBlock.colorOption(type="submit" value=`${val}` style=`background-color: ${colors[key]}`)=val
+  const createColorOptions = function(color) {
+    const markup = `
+      <button class="colorOption colorBlock" style=background-color:${color} value=${color} type=submit>${color}</li>
+    `
+    return markup
+  }
+  
 
   const renderColors = function(colorArray) {
     $('#favColors').empty()
@@ -21,46 +25,41 @@ $(document).ready(function() {
       newColor = createColorBlock(color)
       $('#favColors').prepend(newColor)
     }
-      // const newColor = createColorBlock(colorArray[colorArray.length - 1]);
-      // $('#favColors').prepend(newColor)
   }
 
-
-  // const favObject = {'0': '#FF5733'}
-  const fetchColors = () => {
+  const fetchColors = async () => {
     const randomColor = Math.floor(Math.random()*16777215).toString(16);
 
     const url = `https://www.thecolorapi.com/scheme?hex=${randomColor}&format=json&mode=analogic&count=6`
     
-    colorObject = {}
+    const newColorObject = {}
+    let newOption;
+    $('#colorOptions').empty()
     axios.get(url)
         .then(response => {
-
           let index = 0
 
           for (let i = 0; i < response.data.colors.length; i++) {
-            let colorArray = Object.values(colorObject)
+            let newColorArray = Object.values(newColorObject)
 
-            if (!colorArray.includes(response.data.colors[i].name.closest_named_hex)) {
-              colorObject[index] = response.data.colors[i].name.closest_named_hex
+            if (!newColorArray.includes(response.data.colors[i].name.closest_named_hex)) {
+              newColorObject[index] = response.data.colors[i].name.closest_named_hex
               index++
             }
+            newOption = createColorOptions(response.data.colors[i].name.closest_named_hex)
+            $('#colorOptions').prepend(newOption)
           }
-          console.log(colorObject, "colorObject")
-            res.render("colors", {colors: colorObject})
         })
         .catch(error => console.error(error));
   };
 
-  // fetchColors();
 
-  $(".tryAgain").click(function() {
-    alert("trying Again")
-    fetchColors()
+  $(".tryAgain").click(async function() {
+    await fetchColors()
   })
 
 
-  $(".colorOption").click(function() {
+  $("#colorOptions").on("click", ".colorOption", function() {
     colorArray.push(this.value)
     renderColors(colorArray)
   })
