@@ -64,6 +64,16 @@ $(document).ready(function() {
     renderColors(colorArray)
   })
 
+  $("#colorOptions").on( {mouseenter: function() {
+    $(this).text("")
+    $( this ).append( ( "<span><i class='fa-solid fa-heart'></i></span>" ) );
+
+  },
+  mouseleave: function(){
+    $( this ).find( "span" ).last().remove();
+    $(this).text(this.value)
+  }}, ".colorOption");
+
   $("#favColors").on("click", ".favColor", function() {
     const index = colorArray.indexOf(this.value)
     if (index !== -1) {
