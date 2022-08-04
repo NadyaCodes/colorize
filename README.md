@@ -21,3 +21,9 @@ ______
 * pug
 
 ## Screenshots
+
+![Colorize Screenshot 1](https://github.com/NadyaCodes/colorize/blob/0f999353d3bd91394d9b37432fddfdfd38c9f939/docs/Colorize%20Screenshot%201.png?raw=true)
+
+![Colorize Screenshot 2](https://github.com/NadyaCodes/colorize/blob/0f999353d3bd91394d9b37432fddfdfd38c9f939/docs/Colorize%20Screenshot%202.png?raw=true)
+
+![Colorize Screenshot 3](https://github.com/NadyaCodes/colorize/blob/0f999353d3bd91394d9b37432fddfdfd38c9f939/docs/Colorize%20Screenshot%203.png?raw=true)
