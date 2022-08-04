@@ -97,9 +97,8 @@ a {
 }
 
 .startButton:hover {
-  box-shadow:  0 0 40px 20px rgb(249, 249, 160);
+  box-shadow: 0 0 40px 20px rgb(249, 249, 160);
 }
-
 
 .Message {
   background: white;
@@ -131,7 +130,6 @@ a {
   justify-content: center;
   align-items: center;
 
-
   height: 55px;
   width: 150px;
   margin: 2rem;
@@ -145,7 +143,7 @@ a {
   color: black;
   text-transform: capitalize;
   box-shadow: 3px 5px 20px 5px rgba(0, 0, 0, 0.06),
-  3px 5px 20px 5px rgba(0, 0, 0, 0.06), 3px 5px 20px 5px rgba(0, 0, 0, 0.08);
+    3px 5px 20px 5px rgba(0, 0, 0, 0.06), 3px 5px 20px 5px rgba(0, 0, 0, 0.08);
   fill: rgba(0, 0, 0, 0.54);
 }
 
@@ -153,7 +151,8 @@ a {
   transform: translate(2px, -2px);
 }
 
-.WelcomeView, .ColorView {
+.WelcomeView,
+.ColorView {
   background: url("colorBurst.jpeg") left bottom;
   background-size: cover;
 }
@@ -170,15 +169,14 @@ a {
   margin-left: 1rem;
 }
 
-
 .colorBlock {
   width: 10rem;
   height: 10rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: .5rem;
-  border-radius: .2rem;
+  margin: 0.5rem;
+  border-radius: 0.2rem;
   border: none;
   color: black;
   font-weight: bold;
