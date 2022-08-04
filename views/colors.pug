@@ -20,7 +20,7 @@ block layout-content
         each fav in favs
           button.colorBlock.favColor(type="submit" value=`${fav}` style=`background-color: ${fav}`)=fav
       else
-        button.colorBlock.favColor(type="submit" value=0 style=`background-color: ${000000}`)="No Faves Yet!"
+        button.colorBlock.noFav(type="submit" value=0 style=`background-color: ${000000}`)="No Faves Yet!"
     div.NavButtons
       div.NavButton(id='downloadColors') Download Colors
       a(href="/")
