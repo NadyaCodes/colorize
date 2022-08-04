@@ -82,5 +82,26 @@ $(document).ready(function() {
     $(this).text(this.value)
   }}, ".favColor");
 
+  function download(filename, text) {
+    let element = document.createElement('a');
+    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+    element.setAttribute('download', filename);
+
+    element.style.display = 'none';
+    document.body.appendChild(element)
+    element.click()
+    document.body.removeChild(element)
+  }
+
+  $("#downloadColors").click(function() {
+    let colorString = ''
+
+    for (let i = 0; i < colorArray.length; i++) {
+      colorString += `Color ${(i + 1)}: ${colorArray[i]} \n`
+    }
+
+    download('colors.txt', colorString)
+    alert('Download Successful')
+  })
   
 })

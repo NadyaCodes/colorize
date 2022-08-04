@@ -9,11 +9,11 @@ block layout-content
     div.NavButtons
       //- a(href="/colors")
       div.NavButton.tryAgain Load More Colors
-    h2 Options
+    h2 Select Your Faves
     ul(id='colorOptions')
       each val, key in colors
         button.colorBlock.colorOption(type="submit" value=`${val}` style=`background-color: ${colors[key]}`)=val
-
+    hr
     h2 Faves 
     ul(id='favColors')
       if favs.length > 0
@@ -21,7 +21,7 @@ block layout-content
           button.colorBlock.favColor(type="submit" value=`${fav}` style=`background-color: ${fav}`)=fav
       else
         button.colorBlock.favColor(type="submit" value=0 style=`background-color: ${000000}`)="No Faves Yet!"
-
     div.NavButtons
+      div.NavButton(id='downloadColors') Download Colors
       a(href="/")
         div.NavButton Back to Home

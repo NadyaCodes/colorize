@@ -97,36 +97,8 @@ a {
 }
 
 .startButton:hover {
-  /* color: #ffee10; */
-  /* box-shadow: 0 0 5px #ffee10;
-  text-shadow: 0 0 5px #ffee10; */
-
-  /* animation: glow 8s linear infinite; */
-  
-  /* background: linear-gradient(#00FF00, #00FF00, #00FF00); */
-  /* background:  */
-  box-shadow:  0 0 40px 20px yellow;
+  box-shadow:  0 0 40px 20px rgb(249, 249, 160);
 }
-
-/* @keyframes animate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-} */
-
-/* @-webkit-keyframes glowing {
-  from {
-    box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #f0f, 0 0 40px #0ff, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
-  }
-  to {
-    box-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
-  }
-} */
-
-
 
 
 .Message {
@@ -171,11 +143,7 @@ a {
   font-size: 16px;
   font-weight: bold;
   color: black;
-  /* border: .5px solid grey; */
-
   text-transform: capitalize;
-
-  /* border-bottom: var(--ui-shadow-border); */
   box-shadow: 3px 5px 20px 5px rgba(0, 0, 0, 0.06),
   3px 5px 20px 5px rgba(0, 0, 0, 0.06), 3px 5px 20px 5px rgba(0, 0, 0, 0.08);
   fill: rgba(0, 0, 0, 0.54);
@@ -211,7 +179,11 @@ a {
   align-items: center;
   margin: .5rem;
   border-radius: .2rem;
-  border: none
+  border: none;
+  color: black;
+  font-weight: bold;
+  font-size: 1.2rem;
+  font-family: "Raleway", sans-serif;
 }
 .colorBlock:hover {
   box-shadow: var(--ui-shadow);
