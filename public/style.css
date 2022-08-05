@@ -186,10 +186,13 @@ a {
   margin: 0.5rem;
   border-radius: 0.2rem;
   border: none;
-  color: black;
+  color: rgb(35, 35, 41);
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-family: "Raleway", sans-serif;
+  letter-spacing: 2px;
+  text-shadow:1px 1px 30px #fff, 1px 1px 30px #fff;
+  /* transform: scale(.5, 1); */
 }
 .colorBlock:hover {
   box-shadow: var(--ui-shadow);
