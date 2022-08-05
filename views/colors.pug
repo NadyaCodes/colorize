@@ -4,12 +4,11 @@ block layout-content
   div.View.ColorView
   h1.Banner='Color Palette'
   div.colorPage
-    div.NavButtons
-      div.NavButton.tryAgain Load More Colors
     h2 Select Your Faves
     ul(id='colorOptions')
       each val, key in colors
         button.colorBlock.colorOption(type="submit" value=`${val}` style=`background-color: ${colors[key]}`)=val
+    span(id='tryAgain').NavButton.tryAgain Load More Colors
     hr
     h2 Faves 
     ul(id='favColors')

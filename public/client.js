@@ -51,6 +51,7 @@ $(document).ready(function () {
             $("#colorOptions").prepend(newOption);
             index++;
           }
+
         }
       })
       .catch((error) => console.error(error));
@@ -124,4 +125,10 @@ $(document).ready(function () {
 
     download("colors.txt", colorString);
   });
+
+  new Sortable(favColors, {
+    animation: 150,
+    ghostClass: 'sortable-ghost'
+  });
+
 });
