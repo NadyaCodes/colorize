@@ -42,7 +42,6 @@ app.get("/colors", async (req, res) => {
             index++;
           }
         }
-        console.log(colorObject, "colorObject");
         res.render("colors", { colors: colorObject, favs: favsArray });
       })
       .catch((error) => console.error(error));
