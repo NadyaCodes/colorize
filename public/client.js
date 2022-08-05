@@ -123,6 +123,5 @@ $(document).ready(function () {
     }
 
     download("colors.txt", colorString);
-    alert("Download Successful");
   });
 });

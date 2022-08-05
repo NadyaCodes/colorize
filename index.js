@@ -25,7 +25,6 @@ app.get("/colors", async (req, res) => {
 
   const colorObject = {};
   const favsArray = [];
-  // const favObject = {'0': '#FF5733'}
   const fetchColors = () => {
     axios
       .get(url)
