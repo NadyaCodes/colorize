@@ -3,7 +3,7 @@ $(document).ready(function () {
 
   const createColorBlock = function (color) {
     const markup = `
-      <button class="favColor colorBlock" style=background-color:${color} value=${color} type=submit>${color}</li>
+      <li><button class="favColor colorBlock" style=background-color:${color} value=${color} type=submit>${color}</button>Hex code: ${color}</li>
     `;
     return markup;
   };
