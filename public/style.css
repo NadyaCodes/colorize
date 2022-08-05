@@ -96,9 +96,7 @@ a {
   box-shadow: var(--ui-shadow);
 }
 
-.startButton:hover {
-  box-shadow: 0 0 40px 20px rgb(249, 249, 160);
-}
+
 
 .Message {
   background: white;
@@ -149,6 +147,16 @@ a {
 
 .NavButton:hover {
   transform: translate(2px, -2px);
+}
+
+.startButton {
+  font-size: 2rem;
+  width: 260px;
+  height: 70px;
+}
+
+.startButton:hover {
+  box-shadow: 0 0 40px 20px rgb(249, 249, 160);
 }
 
 .WelcomeView,
