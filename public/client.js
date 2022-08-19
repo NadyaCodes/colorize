@@ -116,7 +116,17 @@ $(document).ready(function () {
     document.body.removeChild(element);
   }
 
-  $("#downloadColors").click(function () {
+  $("#downloadScss").click(function () {
+    let colorString = "";
+
+    for (let i = 0; i < colorArray.length; i++) {
+      colorString += `$color-${i + 1}: ${colorArray[i]}; \n`;
+    }
+
+    download("colors.scss", colorString);
+  });
+
+  $("#downloadTxt").click(function () {
     let colorString = "";
 
     for (let i = 0; i < colorArray.length; i++) {
@@ -124,6 +134,23 @@ $(document).ready(function () {
     }
 
     download("colors.txt", colorString);
+  });
+
+  $("#downloadJson").click(function () {
+    console.log("json clicked")
+    let colorString = "{\n";
+
+    for (let i = 0; i < colorArray.length; i++) {
+      if (i === colorArray.length - 1) {
+        colorString += `  "color-${i + 1}": "${colorArray[i]}" \n`;
+      } else {
+        colorString += `  "color-${i + 1}": "${colorArray[i]}", \n`;
+      }
+    }
+
+    colorString += "}";
+
+    download("colors.json", colorString);
   });
 
   new Sortable(favColors, {
